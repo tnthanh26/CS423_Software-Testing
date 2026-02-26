@@ -1,0 +1,36 @@
+tc_id,description,first_name,last_name,address,city,state,country,postcode,phone,dob,email,password,expected_status
+REG_01,Verify Registration with Valid Data,John,Doe,123 Main St,TestCity,TS,US,90210,1234567890,1990-01-01,test_student_01@mail.com,Password123!,201
+REG_02,Verify Registration with Missing First Name,,Doe,123 Main St,TestCity,TS,US,90210,1234567890,1990-01-01,test_student_02@mail.com,Password123!,422
+REG_03,Verify Registration with Missing Last Name,John,,123 Main St,TestCity,TS,US,90210,1234567890,1990-01-01,test_student_03@mail.com,Password123!,422
+REG_04,Verify Registration with Missing Email,John,Doe,123 Main St,TestCity,TS,US,90210,1234567890,1990-01-01,,Password123!,422
+REG_05,Verify Registration with Missing Password,John,Doe,123 Main St,TestCity,TS,US,90210,1234567890,1990-01-01,test_student_05@mail.com,,422
+REG_06,Verify Registration with Missing Address,John,Doe,,TestCity,TS,US,90210,1234567890,1990-01-01,test_student_06@mail.com,Password123!,422
+REG_07,Verify Registration with Missing City,John,Doe,123 Main St,,TS,US,90210,1234567890,1990-01-01,test_student_07@mail.com,Password123!,422
+REG_08,Verify Registration with Missing State,John,Doe,123 Main St,TestCity,,US,90210,1234567890,1990-01-01,test_student_08@mail.com,Password123!,422
+REG_09,Verify Registration with Missing Country,John,Doe,123 Main St,TestCity,TS,,90210,1234567890,1990-01-01,test_student_09@mail.com,Password123!,422
+REG_10,Verify Registration with Missing Postcode,John,Doe,123 Main St,TestCity,TS,US,,1234567890,1990-01-01,test_student_10@mail.com,Password123!,422
+REG_11,Verify Registration with Missing Phone,John,Doe,123 Main St,TestCity,TS,US,90210,,1990-01-01,test_student_11@mail.com,Password123!,422
+REG_12,Verify Registration with Duplicate Email,John,Doe,123 Main St,TestCity,TS,US,90210,1234567890,1990-01-01,test_student_01@mail.com,Password123!,422
+REG_13,Verify Email Format (No @ symbol),John,Doe,123 Main St,TestCity,TS,US,90210,1234567890,1990-01-01,invalidemail.com,Password123!,422
+REG_14,Verify Email Format (No Domain),John,Doe,123 Main St,TestCity,TS,US,90210,1234567890,1990-01-01,user@,Password123!,422
+REG_15,Verify Password Length (< Min),John,Doe,123 Main St,TestCity,TS,US,90210,1234567890,1990-01-01,test_student_15@mail.com,123,422
+REG_16,Verify Password Length (> Max),John,Doe,123 Main St,TestCity,TS,US,90210,1234567890,1990-01-01,test_student_16@mail.com,AaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAa,422
+REG_17,Verify Password Complexity (No Number),John,Doe,123 Main St,TestCity,TS,US,90210,1234567890,1990-01-01,test_student_17@mail.com,PasswordOnly,422
+REG_18,Verify Password Complexity (No Uppercase),John,Doe,123 Main St,TestCity,TS,US,90210,1234567890,1990-01-01,test_student_18@mail.com,password123,422
+REG_19,Verify Phone (Non-Numeric Chars),John,Doe,123 Main St,TestCity,TS,US,90210,123-ABC-456,1990-01-01,test_student_19@mail.com,Password123!,422
+REG_20,Verify Phone Length (Too Short),John,Doe,123 Main St,TestCity,TS,US,90210,12,1990-01-01,test_student_20@mail.com,Password123!,422
+REG_21,Verify Phone Length (Too Long),John,Doe,123 Main St,TestCity,TS,US,90210,12345678901234567890,1990-01-01,test_student_21@mail.com,Password123!,422
+REG_22,Verify Postcode (Alpha chars),John,Doe,123 Main St,TestCity,TS,US,ABCDE,1234567890,1990-01-01,test_student_22@mail.com,Password123!,422
+REG_23,Verify Postcode Length (> 10),John,Doe,123 Main St,TestCity,TS,US,12345678901,1234567890,1990-01-01,test_student_23@mail.com,Password123!,422
+REG_24,Verify DOB (Future Date),John,Doe,123 Main St,TestCity,TS,US,90210,1234567890,2050-01-01,test_student_24@mail.com,Password123!,422
+REG_25,Verify DOB (Invalid Format),John,Doe,123 Main St,TestCity,TS,US,90210,1234567890,01-01-1990,test_student_25@mail.com,Password123!,422
+REG_26,Verify First Name Max Length (40),AaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAa,Doe,123 Main St,TestCity,TS,US,90210,1234567890,1990-01-01,test_student_26@mail.com,Password123!,201
+REG_27,Verify First Name Max Length + 1 (41),AaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaa,Doe,123 Main St,TestCity,TS,US,90210,1234567890,1990-01-01,test_student_27@mail.com,Password123!,422
+REG_28,Verify Last Name Max Length (20),John,BbBbBbBbBbBbBbBbBbBb,123 Main St,TestCity,TS,US,90210,1234567890,1990-01-01,test_student_28@mail.com,Password123!,201
+REG_29,Verify Last Name Max Length + 1 (21),John,BbBbBbBbBbBbBbBbBbBba,123 Main St,TestCity,TS,US,90210,1234567890,1990-01-01,test_student_29@mail.com,Password123!,422
+REG_30,Verify Address Max Length (70),John,Doe,1234567890123456789012345678901234567890123456789012345678901234567890,TestCity,TS,US,90210,1234567890,1990-01-01,test_student_30@mail.com,Password123!,201
+REG_31,Verify Address Max Length + 1 (71),John,Doe,1234567890123456789012345678901234567890123456789012345678901234567890a,TestCity,TS,US,90210,1234567890,1990-01-01,test_student_31@mail.com,Password123!,422
+REG_32,Verify State (Abbreviation vs Full),John,Doe,123 Main St,TestCity,California,US,90210,1234567890,1990-01-01,test_student_32@mail.com,Password123!,201
+REG_33,Verify Empty JSON Body,,,,,,,,,,test_student_33@mail.com,Password123!,422
+REG_34,SQL Injection in Email,John,Doe,123 Main St,TestCity,TS,US,90210,1234567890,1990-01-01,' OR 1=1 --,Password123!,422
+REG_35,XSS Injection in First Name,<script>alert(1)</script>,Doe,123 Main St,TestCity,TS,US,90210,1234567890,1990-01-01,test_student_35@mail.com,Password123!,422

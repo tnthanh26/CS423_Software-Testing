@@ -1,0 +1,35 @@
+TC_ID,Description,Browser,Status,Expected_Error,Actual_Toast,Details
+PROF-EP-01,Valid Update (First Name),edge,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-EP-02,Valid Update (Last Name),edge,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-EP-03,Valid Update (Email),edge,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-EP-04,Valid Update (Phone),edge,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-EP-05,Valid Update (Address),edge,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-EP-06,Valid Update (Postcode),edge,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-EP-07,Valid Update (City),edge,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-EP-08,Valid Update (State),edge,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-EP-09,Valid Update (Country),edge,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-EP-10,Invalid Email (No @),edge,FAIL,Invalid email format,Resource not found,Expected Error 'Invalid email format' NOT found (Got: 'Resource not found')
+PROF-EP-11,Invalid Email (No Domain),edge,FAIL,Invalid email,Resource not found,Expected Error 'Invalid email' NOT found (Got: 'Resource not found')
+PROF-EP-12,Invalid Phone (Text),edge,FAIL,Numbers only,Resource not found,Expected Error 'Numbers only' NOT found (Got: 'Resource not found')
+PROF-EP-13,Invalid Postcode (Text),edge,FAIL,Numbers only,Resource not found,Expected Error 'Numbers only' NOT found (Got: 'Resource not found')
+PROF-EP-14,Empty Field (First Name),edge,FAIL,Field required,Resource not found,Expected Error 'Field required' NOT found (Got: 'Resource not found')
+PROF-EP-15,Empty Field (Last Name),edge,FAIL,Field required,Resource not found,Expected Error 'Field required' NOT found (Got: 'Resource not found')
+PROF-EP-16,Empty Field (Email),edge,FAIL,Field required,Resource not found,Expected Error 'Field required' NOT found (Got: 'Resource not found')
+PROF-EP-17,Special Chars (Name),edge,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-EP-18,City (Special Chars),edge,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-EP-19,Data Persistence (Refresh),edge,PASS,,,Value reverted on refresh
+PROF-BVA-01,Phone (Min - 1),edge,FAIL,Too short,Resource not found,Expected Error 'Too short' NOT found (Got: 'Resource not found')
+PROF-BVA-02,Phone (Min),edge,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-BVA-03,Phone (Min + 1),edge,FAIL,Too long,Resource not found,Expected Error 'Too long' NOT found (Got: 'Resource not found')
+PROF-BVA-04,Address (Min - 1),edge,FAIL,Too short,Resource not found,Expected Error 'Too short' NOT found (Got: 'Resource not found')
+PROF-BVA-05,Address (Min),edge,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-BVA-06,Address (Min + 1),edge,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-BVA-07,Address (Max - 1),edge,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-BVA-08,Address (Max),edge,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-BVA-09,Address (Max + 1),edge,FAIL,Too long,Resource not found,Expected Error 'Too long' NOT found (Got: 'Resource not found')
+PROF-BVA-10,Postcode (Min - 1),edge,FAIL,Too short,Resource not found,Expected Error 'Too short' NOT found (Got: 'Resource not found')
+PROF-BVA-11,Postcode (Min),edge,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-BVA-12,Postcode (Min + 1),edge,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-BVA-13,Postcode (Max - 1),edge,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-BVA-14,Postcode (Max),edge,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-BVA-15,Postcode (Max + 1),edge,FAIL,Too long,Resource not found,Expected Error 'Too long' NOT found (Got: 'Resource not found')

@@ -1,0 +1,51 @@
+id,parent_id,name,slug
+1,,Hand Tools,hand-tools
+2,,Power Tools,power-tools
+3,,Rentals,rentals
+4,,Other,other
+5,1,Hammer,hammer
+6,1,Claw Hammer,claw-hammer
+7,1,Mallet,mallet
+8,1,Sledgehammer,sledgehammer
+9,1,Wood Saw,wood-saw
+10,1,Hand Saw,hand-saw
+11,1,Hacksaw,hacksaw
+12,1,Chisel,chisel
+13,1,File,file
+14,1,Adjustable wrench,adjustable-wrench
+15,1,Wrench,wrench
+16,1,Pipe Wrench,pipe-wrench
+17,1,Torque Wrench,torque-wrench
+18,1,Open-end spanners (Set),open-end-spanners-(set)
+19,1,Phillips Screwdriver,phillips-screwdriver
+20,1,Screwdriver,screwdriver
+21,1,Pliers,pliers
+22,1,Combination Pliers,combination-pliers
+23,1,Bolt Cutters,bolt-cutters
+24,1,Long Nose Pliers,long-nose-pliers
+25,1,Slip Joint Pliers,slip-joint-pliers
+26,1,Utility Knife,utility-knife
+27,1,Tape Measure,tape-measure
+28,1,Level,level
+29,2,Sheet Sander,sheet-sander
+30,2,Belt Sander,belt-sander
+31,2,Random Orbit Sander,random-orbit-sander
+32,2,Sander,sander
+33,2,Cordless Drill,cordless-drill
+34,2,Cordless Drill 18V,cordless-drill-18v
+35,2,Drill Bits,drill-bits
+36,2,Drill,drill
+37,2,Grinder,grinder
+38,2,Angle Grinder,angle-grinder
+39,2,Circular Saw,circular-saw
+40,2,Jigsaw,jigsaw
+41,2,Reciprocating Saw,reciprocating-saw
+42,2,Saw,saw
+43,2,Heat Gun,heat-gun
+44,2,Router,router
+45,2,Planer,planer
+46,3,Crane,crane
+47,3,Excavator,excavator
+48,3,Bulldozer,bulldozer
+49,3,Jackhammer,jackhammer
+50,3,Concrete Mixer,concrete-mixer

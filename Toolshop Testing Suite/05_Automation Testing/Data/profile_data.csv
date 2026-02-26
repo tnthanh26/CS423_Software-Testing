@@ -1,0 +1,35 @@
+TC_ID,Description,Field_Name,Input_Value,Expected_Error
+PROF-EP-01,Valid Update (First Name),first_name,Josh,
+PROF-EP-02,Valid Update (Last Name),last_name,Dallas,
+PROF-EP-03,Valid Update (Email),email,new@test.com,
+PROF-EP-04,Valid Update (Phone),phone,0987654321,
+PROF-EP-05,Valid Update (Address),address,123 Main St,
+PROF-EP-06,Valid Update (Postcode),postcode,70000,
+PROF-EP-07,Valid Update (City),city,New York,
+PROF-EP-08,Valid Update (State),state,NY,
+PROF-EP-09,Valid Update (Country),country,USA,
+PROF-EP-10,Invalid Email (No @),email,test.com,Invalid email format
+PROF-EP-11,Invalid Email (No Domain),email,test@,Invalid email
+PROF-EP-12,Invalid Phone (Text),phone,abcdef,Numbers only
+PROF-EP-13,Invalid Postcode (Text),postcode,ABC,Numbers only
+PROF-EP-14,Empty Field (First Name),first_name,,Field required
+PROF-EP-15,Empty Field (Last Name),last_name,,Field required
+PROF-EP-16,Empty Field (Email),email,,Field required
+PROF-EP-17,Special Chars (Name),first_name,@#$%,
+PROF-EP-18,City (Special Chars),city,St. Louis,
+PROF-EP-19,Data Persistence (Refresh),first_name,New Name,
+PROF-BVA-01,Phone (Min - 1),phone,123456789,Too short
+PROF-BVA-02,Phone (Min),phone,0123456789,
+PROF-BVA-03,Phone (Min + 1),phone,01234567891,Too long
+PROF-BVA-04,Address (Min - 1),address,1234,Too short
+PROF-BVA-05,Address (Min),address,12345,
+PROF-BVA-06,Address (Min + 1),address,123456,
+PROF-BVA-07,Address (Max - 1),address,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,
+PROF-BVA-08,Address (Max),address,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,
+PROF-BVA-09,Address (Max + 1),address,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,Too long
+PROF-BVA-10,Postcode (Min - 1),postcode,123,Too short
+PROF-BVA-11,Postcode (Min),postcode,1234,
+PROF-BVA-12,Postcode (Min + 1),postcode,12345,
+PROF-BVA-13,Postcode (Max - 1),postcode,123456789,
+PROF-BVA-14,Postcode (Max),postcode,1234567890,
+PROF-BVA-15,Postcode (Max + 1),postcode,12345678901,Too long

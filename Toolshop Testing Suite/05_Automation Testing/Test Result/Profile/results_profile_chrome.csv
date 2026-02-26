@@ -1,0 +1,35 @@
+TC_ID,Description,Browser,Status,Expected_Error,Actual_Toast,Details
+PROF-EP-01,Valid Update (First Name),chrome,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-EP-02,Valid Update (Last Name),chrome,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-EP-03,Valid Update (Email),chrome,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-EP-04,Valid Update (Phone),chrome,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-EP-05,Valid Update (Address),chrome,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-EP-06,Valid Update (Postcode),chrome,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-EP-07,Valid Update (City),chrome,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-EP-08,Valid Update (State),chrome,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-EP-09,Valid Update (Country),chrome,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-EP-10,Invalid Email (No @),chrome,FAIL,Invalid email format,Resource not found,Expected Error 'Invalid email format' NOT found (Got: 'Resource not found')
+PROF-EP-11,Invalid Email (No Domain),chrome,FAIL,Invalid email,Resource not found,Expected Error 'Invalid email' NOT found (Got: 'Resource not found')
+PROF-EP-12,Invalid Phone (Text),chrome,FAIL,Numbers only,Resource not found,Expected Error 'Numbers only' NOT found (Got: 'Resource not found')
+PROF-EP-13,Invalid Postcode (Text),chrome,FAIL,Numbers only,Resource not found,Expected Error 'Numbers only' NOT found (Got: 'Resource not found')
+PROF-EP-14,Empty Field (First Name),chrome,FAIL,Field required,,Expected Error 'Field required' NOT found (Got: 'None')
+PROF-EP-15,Empty Field (Last Name),chrome,FAIL,Field required,Resource not found,Expected Error 'Field required' NOT found (Got: 'Resource not found')
+PROF-EP-16,Empty Field (Email),chrome,FAIL,Field required,Resource not found,Expected Error 'Field required' NOT found (Got: 'Resource not found')
+PROF-EP-17,Special Chars (Name),chrome,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-EP-18,City (Special Chars),chrome,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-EP-19,Data Persistence (Refresh),chrome,PASS,,,Value reverted on refresh
+PROF-BVA-01,Phone (Min - 1),chrome,FAIL,Too short,Resource not found,Expected Error 'Too short' NOT found (Got: 'Resource not found')
+PROF-BVA-02,Phone (Min),chrome,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-BVA-03,Phone (Min + 1),chrome,FAIL,Too long,Resource not found,Expected Error 'Too long' NOT found (Got: 'Resource not found')
+PROF-BVA-04,Address (Min - 1),chrome,FAIL,Too short,Resource not found,Expected Error 'Too short' NOT found (Got: 'Resource not found')
+PROF-BVA-05,Address (Min),chrome,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-BVA-06,Address (Min + 1),chrome,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-BVA-07,Address (Max - 1),chrome,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-BVA-08,Address (Max),chrome,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-BVA-09,Address (Max + 1),chrome,FAIL,Too long,Resource not found,Expected Error 'Too long' NOT found (Got: 'Resource not found')
+PROF-BVA-10,Postcode (Min - 1),chrome,FAIL,Too short,Resource not found,Expected Error 'Too short' NOT found (Got: 'Resource not found')
+PROF-BVA-11,Postcode (Min),chrome,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-BVA-12,Postcode (Min + 1),chrome,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-BVA-13,Postcode (Max - 1),chrome,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-BVA-14,Postcode (Max),chrome,FAIL,,Resource not found,Bug Detected: Error Toast appeared: 'Resource not found'
+PROF-BVA-15,Postcode (Max + 1),chrome,FAIL,Too long,Resource not found,Expected Error 'Too long' NOT found (Got: 'Resource not found')

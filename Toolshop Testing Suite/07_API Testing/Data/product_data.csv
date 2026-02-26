@@ -1,0 +1,39 @@
+tc_id,description,q,by_category,by_brand,price_min,price_max,sort,page,expected_status,validation_type
+SRCH_01,Verify Search with Exact Keyword,Hammer,,,,,,,200,check_keyword_match
+SRCH_02,Verify Search with Partial Keyword,Ham,,,,,,,200,check_keyword_match
+SRCH_03,Verify Search with Non-Existent Keyword,Supercalifragilistic,,,,,,,200,check_empty
+SRCH_04,Verify Search with Case Sensitivity (Upper),HAMMER,,,,,,,200,check_keyword_match
+SRCH_05,Verify Search with Special Characters,@#%,,,,,,,200,check_empty
+SRCH_06,Verify Search with Empty Keyword,,,,,,,,200,check_all_products
+SRCH_07,Verify Search with SQL Injection String,' OR 1=1 --,,,,,,,200,check_empty
+SRCH_08,Verify Search with HTML Injection (XSS),<script>alert(1)</script>,,,,,,,200,check_empty
+SRCH_09,Verify Search with Very Long String,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,,,,,,,200,check_empty
+SRCH_10,Filter by Valid Category ID,,3,,,,,,200,filter_category
+SRCH_11,Filter by Invalid Category ID,,99999,,,,,,200,check_empty
+SRCH_12,Filter by Malformatted Category ID,,abc,,,,,,200,check_empty
+SRCH_13,Filter by Valid Brand ID,,,1,,,,,200,filter_brand
+SRCH_14,Filter by Invalid Brand ID,,,99999,,,,,200,check_empty
+SRCH_15,Filter by Malformatted Brand ID,,,abc,,,,,200,check_empty
+SRCH_16,Filter by Price Min (Valid),,,,10,,,,200,price_min_check
+SRCH_17,Filter by Price Max (Valid),,,,,50,,,200,price_max_check
+SRCH_18,Filter by Price Range (Valid),,,,10,50,,,200,price_range_check
+SRCH_19,Filter by Price Range (Min > Max),,,,100,10,,,200,check_empty
+SRCH_20,Filter by Negative Price,,,,-10,,,,400,status_only
+SRCH_21,Filter by Price with Decimals,,,,10.50,,,,200,price_min_check
+SRCH_22,Filter by Non-Numeric Price,,,,free,,,,400,status_only
+SRCH_23,Sort by Name Ascending,,,,,,"name,asc",,200,sort_name_asc
+SRCH_24,Sort by Name Descending,,,,,,"name,desc",,200,sort_name_desc
+SRCH_25,Sort by Price High-Low,,,,,,"price,desc",,200,sort_price_desc
+SRCH_26,Sort by Price Low-High,,,,,,"price,asc",,200,sort_price_asc
+SRCH_27,Sort by CO2 Rating (Low-High),,,,,,"co2_rating,asc",,200,sort_co2_asc
+SRCH_28,Sort by CO2 Rating (High-Low),,,,,,"co2_rating,desc",,200,sort_co2_desc
+SRCH_29,Sort by Invalid Column,,,,,,"xyz,asc",,400,status_only
+SRCH_30,Pagination (Page 1),,,,,,,1,200,check_page_1
+SRCH_31,Pagination (Page Out of Bounds),,,,,,,1000,200,check_empty
+SRCH_32,Pagination (Negative Page),,,,,,,-1,400,status_only
+SRCH_33,Combination: Category + Brand,,3,1,,,,,200,filter_brand
+SRCH_34,Combination: Keyword + Price,Hammer,,,,20,,,200,price_max_check
+SRCH_35,Combination: Keyword + Sort,Hammer,,,,,"price,desc",,200,sort_price_desc
+SRCH_36,Combination: All Filters,a,3,,10,,"name,asc",,200,sort_name_asc
+SRCH_37,Combination: Conflicting Filters,,3,99,,,,,200,check_empty
+SRCH_38,Verify Space Handling in Query,Claw Hammer,,,,,,,200,check_keyword_match

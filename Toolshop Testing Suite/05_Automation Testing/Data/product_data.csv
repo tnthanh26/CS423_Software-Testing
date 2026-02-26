@@ -1,0 +1,36 @@
+TC_ID,Description,Flow_Type,Target_Product,Name,Price,Stock,Description_Input,Brand,Category,Image,CO2,Check_Location,Check_Rental,Expected_Error
+PROD-EP-01,Valid Add (Happy Path),Add,,New Ivory Bulldozer,56.14,39,This reliable Ivory Bulldozer is designed for everyday repairs. It features a robust build quality ensuring long-lasting performance in any environment.,6,5,1,1,,,
+PROD-EP-02,Invalid (Name Empty),Add,, ,12.00,5,Desc,6,5,1,1,,,Name is required
+PROD-EP-03,Invalid (Stock Empty),Add,,TestItem,12.00,,Desc,6,5,1,1,,,Stock is required
+PROD-EP-04,Invalid (Stock Text),Add,,TestItem,12.00,abc,Desc,6,5,1,1,,,Stock must be a number
+PROD-EP-05,Invalid (Stock Decimal),Add,,TestItem,12.00,10.5,Desc,6,5,1,1,,,Stock must be an integer
+PROD-EP-06,Invalid (Price Empty),Add,,TestItem,,10,Desc,6,5,1,1,,,Price is required
+PROD-EP-07,Invalid (Price Text),Add,,TestItem,abc,10,Desc,6,5,1,1,,,Price must be a number
+PROD-EP-08,Invalid (Brand Empty),Add,,TestItem,12.00,10,Desc,,5,1,1,,,Brand is required
+PROD-EP-09,Invalid (Category Empty),Add,,TestItem,12.00,10,Desc,6,,1,1,,,Category is required
+PROD-EP-10,Valid (Description Empty),Add,,NoDescItem,12.00,10,,6,5,1,1,,,Description is required
+PROD-EP-11,Valid (Edit Product),Edit,Combination Pliers,,15.00,,,,,,,,,
+PROD-BVA-01,Name (Min - 1),Add,, ,10.00,10,Desc,6,5,1,1,,,Name is required
+PROD-BVA-02,Name (Min),Add,,a,10.00,10,Desc,6,5,1,1,,,
+PROD-BVA-03,Name (Min + 1),Add,,ab,10.00,10,Desc,6,5,1,1,,,
+PROD-BVA-04,Name (Max - 1),Add,,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,10.00,10,Desc,6,5,1,1,,,
+PROD-BVA-05,Name (Max),Add,,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,10.00,10,Desc,6,5,1,1,,,
+PROD-BVA-06,Name (Max + 1),Add,,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,10.00,10,Desc,6,5,1,1,,,The name field must not be greater than 120 characters.
+PROD-BVA-07,Description (Min - 1),Add,,DescTest,10.00,10, ,6,5,1,1,,,Description is required
+PROD-BVA-08,Description (Min),Add,,DescTest,10.00,10,a,6,5,1,1,,,
+PROD-BVA-09,Description (Min + 1),Add,,DescTest,10.00,10,ab,6,5,1,1,,,
+PROD-BVA-10,Description (Max - 1),Add,,DescTest,10.00,10,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,6,5,1,1,,,
+PROD-BVA-11,Description (Max),Add,,DescTest,10.00,10,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,6,5,1,1,,,
+PROD-BVA-12,Description (Max + 1),Add,,DescTest,10.00,10,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,6,5,1,1,,,The description field must not be greater than 1250 characters.
+PROD-BVA-13,Stock (Min - 1),Add,,NegStock,56.14,-1,Desc,6,5,1,1,,,Stock must be 0 or greater
+PROD-BVA-14,Stock (Min),Add,,ZeroStock,56.14,0,Desc,6,5,1,1,,,
+PROD-BVA-15,Stock (Min + 1),Add,,OneStock,56.14,1,Desc,6,5,1,1,,,
+PROD-BVA-16,Stock (Nominal),Add,,NomStock,56.14,150,Desc,6,5,1,1,,,
+PROD-BVA-17,Price (Min - 0.01),Add,,NegPrice,-0.01,39,Desc,6,5,1,1,,,Price must be 0.00 or greater
+PROD-BVA-18,Price (Min),Add,,ZeroPrice,0.00,39,Desc,6,5,1,1,,,
+PROD-BVA-19,Price (Min + 0.01),Add,,LowPrice,0.01,39,Desc,6,5,1,1,,,
+PROD-BVA-20,Edit - Name (Invalid),Edit,Pliers, ,,,,,,,,,,Name is required
+PROD-BVA-21,Edit - Description (Invalid),Edit,Hammer,,,, ,,,,,,,Description is required
+PROD-BVA-22,Edit - Stock (Invalid),Edit,Hammer,,,-1,,,,,,,,Stock must be 0 or greater
+PROD-BVA-23,Edit - Price (Invalid),Edit,Hammer,,-1.00,,,,,,,,,Price must be 0.00 or greater
+PROD-BVA-24,Valid (Checkboxes),Add,,RentItem,20.00,5,Rental Desc,6,5,1,2,True,True,

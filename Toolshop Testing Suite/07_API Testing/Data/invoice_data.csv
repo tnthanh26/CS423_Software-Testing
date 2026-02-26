@@ -1,0 +1,35 @@
+tc_id,description,invoice_id,status,expected_status,validation_type,start_status
+INV_01,Update Status to AWAITING_FULFILLMENT (Reversion),1,AWAITING_FULFILLMENT,200,check_status_updated,ON_HOLD
+INV_02,Update Status to ON_HOLD,2,ON_HOLD,200,check_status_updated,AWAITING_FULFILLMENT
+INV_03,Update Status to AWAITING_SHIPMENT,3,AWAITING_SHIPMENT,200,check_status_updated,ON_HOLD
+INV_04,Update Status to SHIPPED,4,SHIPPED,200,check_status_updated,AWAITING_SHIPMENT
+INV_05,Update Status to COMPLETED,5,COMPLETED,200,check_status_updated,SHIPPED
+INV_06,Verify Status Case Sensitivity (Lower),6,awaiting_fulfillment,422,status_only,AWAITING_FULFILLMENT
+INV_07,Verify Status Case Sensitivity (Mixed),7,On_Hold,422,status_only,AWAITING_FULFILLMENT
+INV_08,Verify Invalid Status (Random String),8,INVALID_STATUS,422,status_only,AWAITING_FULFILLMENT
+INV_09,Verify Invalid Status (With Spaces),9,ON HOLD,422,status_only,AWAITING_FULFILLMENT
+INV_10,Verify Invalid Status (Empty String),10,,422,status_only,AWAITING_FULFILLMENT
+INV_11,Verify Invalid Status (Null),1,null,422,status_only,AWAITING_FULFILLMENT
+INV_12,Verify Invalid Status (Numeric),2,123,422,status_only,AWAITING_FULFILLMENT
+INV_13,Verify Status with Leading Space,3, ON_HOLD,422,status_only,AWAITING_FULFILLMENT
+INV_14,Verify Status with Trailing Space,4,ON_HOLD ,422,status_only,AWAITING_FULFILLMENT
+INV_15,Verify SQL Injection in Status,5,' OR 1=1 --,422,status_only,AWAITING_FULFILLMENT
+INV_16,Verify XSS Injection in Status,6,<script>alert(1)</script>,422,status_only,AWAITING_FULFILLMENT
+INV_17,Verify Update with Valid ID (Existing),7,ON_HOLD,200,check_status_updated,AWAITING_FULFILLMENT
+INV_18,Verify Update with Non-Existent ID,99999,ON_HOLD,200,check_failure,
+INV_19,Verify Update with Malformed ID (String),abc,ON_HOLD,200,check_failure,
+INV_20,Verify Update with Negative ID,-1,ON_HOLD,200,check_failure,
+INV_21,Verify Update with Zero ID,0,ON_HOLD,200,check_failure,
+INV_22,Verify SQL Injection in ID,' OR 1=1 --,ON_HOLD,200,check_failure,
+INV_23,Verify Special Characters in ID,@#$,ON_HOLD,422,status_only,
+INV_24,Verify Idempotency (Update Same Status),8,ON_HOLD,200,check_status_updated,ON_HOLD
+INV_25,Verify Transition: Awaiting -> Hold,9,ON_HOLD,200,check_status_updated,AWAITING_FULFILLMENT
+INV_26,Verify Transition: Hold -> Shipment,10,AWAITING_SHIPMENT,200,check_status_updated,ON_HOLD
+INV_27,Verify Transition: Shipment -> Shipped,1,SHIPPED,200,check_status_updated,AWAITING_SHIPMENT
+INV_28,Verify Transition: Shipped -> Completed,2,COMPLETED,200,check_status_updated,SHIPPED
+INV_29,Verify Very Long Status String,3,AWAITING_FULFILLMENT_AWAITING_FULFILLMENT_AWAITING_FULFILLMENT_AWAITING_FULFILLMENT,422,status_only,AWAITING_FULFILLMENT
+INV_30,Verify JSON Malformed (Simulated),4,ON_HOLD,400,status_only,AWAITING_FULFILLMENT
+INV_31,Verify Missing Status Field,5,,422,status_only,AWAITING_FULFILLMENT
+INV_32,Verify Status with Special Chars,7,ON_HOLD@,422,status_only,AWAITING_FULFILLMENT
+INV_33,Verify Reverting Status,8,ON_HOLD,200,check_status_updated,COMPLETED
+INV_34,Verify Invalid Content Type,9,ON_HOLD,415,status_only,AWAITING_FULFILLMENT

@@ -1,0 +1,33 @@
+TC_ID,Description,Browser,Status,Details
+ATC-EP-01,Valid Add (Single Item),chrome,FAIL,"Qty updates correctly, Bug Detected: Error Toast appeared: 'Oeps, something went wrong.'"
+ATC-EP-02,Valid Add (Mid Range),chrome,FAIL,"Qty updates correctly, Bug Detected: Error Toast appeared: 'Oeps, something went wrong.'"
+ATC-EP-03,Valid Add (Max Limit),chrome,FAIL,"Qty updates correctly, Bug Detected: Error Toast appeared: 'Oeps, something went wrong.'"
+ATC-EP-04,Valid Cumulative Add,chrome,FAIL,"Qty Mismatch (Exp:10 vs Act:5), Bug Detected: Error Toast appeared: 'Oeps, something went wrong.'"
+ATC-EP-05,Invalid Add (Text),chrome,PASS,Passed (Can't find cart as expected)
+ATC-EP-06,Invalid Add (Special Chars),chrome,PASS,Passed (Can't find cart as expected)
+ATC-EP-07,Invalid Add (Empty),chrome,PASS,Passed (Can't find cart as expected)
+ATC-EP-08,Invalid Add (Decimal),chrome,FAIL,"Invalid Input Added to Cart (Found Qty: 2.5), Expected Error 'Must be integer' NOT found (Got: 'Oeps, something went wrong.')"
+ATC-EP-09,Invalid Add (Spaces),chrome,PASS,Passed (Can't find cart as expected)
+ATC-EP-10,Valid Add (Leading Zero),chrome,FAIL,"Qty updates correctly, Bug Detected: Error Toast appeared: 'Oeps, something went wrong.'"
+ATC-EP-11,Valid Multi-Product,chrome,FAIL,"Qty updates correctly, Bug Detected: Error Toast appeared: 'Oeps, something went wrong.'"
+ATC-EP-12,Valid Persistence (Refresh),chrome,PASS,Qty updates correctly
+ATC-EP-13,Guest Session (New Tab),chrome,PASS,Passed (Can't find cart as expected)
+ATC-EP-14,Cart Total Calculation,chrome,FAIL,"Qty updates correctly, Line Total Bug: Pliers shows $0.00, Grand Total Correct ($60.05)"
+ATC-EP-15,Grand Total Summation,chrome,FAIL,"Qty updates correctly, Line Total Bug: Pliers shows $0.00, Line Total Bug: Hammer shows $0.00, Grand Total Correct ($36.6)"
+ATC-EP-16,Cart Update (Cumulative),chrome,FAIL,"Qty Mismatch (Exp:5 vs Act:3), Line Total Bug: Pliers shows $0.00, Grand Total Mismatch (Exp:$60.05 vs Act:$36.03)"
+ATC-EP-17,Valid Float as Int,chrome,FAIL,"Qty updates correctly, Bug Detected: Error Toast appeared: 'Oeps, something went wrong.'"
+ATC-EP-18,Valid Reset Flow,chrome,FAIL,Delete Button Failed: Item still in cart
+ATC-EP-19,Valid Stepper (+),chrome,FAIL,Stepper '+' stuck/wrong (Exp: 2 vs Act: 1)
+ATC-EP-20,Valid Stepper (-),chrome,FAIL,Stepper '-' stuck/wrong (Exp: 4 vs Act: 5)
+ATC-BVA-01,Boundary (Min - 1),chrome,PASS,Passed (Can't find cart as expected)
+ATC-BVA-02,Boundary (Min),chrome,FAIL,"Qty updates correctly, Bug Detected: Error Toast appeared: 'Oeps, something went wrong.'"
+ATC-BVA-03,Boundary (Min + 1),chrome,FAIL,"Qty updates correctly, Bug Detected: Error Toast appeared: 'Oeps, something went wrong.'"
+ATC-BVA-04,Boundary (Max - 1),chrome,FAIL,"Qty updates correctly, Bug Detected: Error Toast appeared: 'Oeps, something went wrong.'"
+ATC-BVA-05,Boundary (Max),chrome,FAIL,"Qty updates correctly, Bug Detected: Error Toast appeared: 'Oeps, something went wrong.'"
+ATC-BVA-06,Boundary (Max + 1),chrome,PASS,Passed (Can't find cart as expected)
+ATC-BVA-07,Boundary (Max + 2),chrome,PASS,Passed (Can't find cart as expected)
+ATC-BVA-08,Boundary (Huge Value),chrome,PASS,Passed (Can't find cart as expected)
+ATC-BVA-09,Cumulative (9 + 1),chrome,FAIL,"Qty Mismatch (Exp:10 vs Act:1), Bug Detected: Error Toast appeared: 'Oeps, something went wrong.'"
+ATC-BVA-10,Cumulative (10 + 1),chrome,FAIL,"Qty Mismatch (Exp:10 vs Act:1), Expected Error 'Limit reached' NOT found (Got: 'Oeps, something went wrong.')"
+ATC-BVA-11,Cumulative (5 + 6),chrome,FAIL,"Qty Mismatch (Exp:5 vs Act:6), Expected Error 'Limit reached' NOT found (Got: 'Oeps, something went wrong.')"
+ATC-BVA-12,Negative Value (-1),chrome,PASS,Passed (Can't find cart as expected)

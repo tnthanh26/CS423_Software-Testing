@@ -1,0 +1,36 @@
+TC_ID,Description,Browser,Flow_Type,Status,Expected_Error,Actual_Error_Seen,Toasts,Details
+PROD-EP-01,Valid Add (Happy Path),edge,Add,PASS,,,Stock is required for non-rental products | Product saved!,[PASS] Success + Error both shown: Stock is required for non-rental products | Product saved!
+PROD-EP-02,Invalid (Name Empty),edge,Add,PASS,Name is required,Name is required,Name is required,[PASS] Expected error present. Seen: Name is required
+PROD-EP-03,Invalid (Stock Empty),edge,Add,PASS,Stock is required,Stock is required for non-rental products,Stock is required for non-rental products,[PASS] Expected error present. Seen: Stock is required for non-rental products
+PROD-EP-04,Invalid (Stock Text),edge,Add,FAIL,Stock must be a number,,Something went wrong,Expected Error 'Stock must be a number' NOT found (Got: 'Something went wrong')
+PROD-EP-05,Invalid (Stock Decimal),edge,Add,FAIL,Stock must be an integer,,Stock is required for non-rental products | Product saved!,Expected Error 'Stock must be an integer' NOT found (Got: 'Stock is required for non-rental products | Product saved!')
+PROD-EP-06,Invalid (Price Empty),edge,Add,PASS,Price is required,Price is required,Price is required,[PASS] Expected error present. Seen: Price is required
+PROD-EP-07,Invalid (Price Text),edge,Add,PASS,Price must be a number,The price field must be a number.,The price field must be a number.,[PASS] Expected error present. Seen: The price field must be a number.
+PROD-EP-08,Invalid (Brand Empty),edge,Add,FAIL,Brand is required,,,Expected Error 'Brand is required' NOT found (Got: 'NO TOASTS/ERROR TEXT FOUND')
+PROD-EP-09,Invalid (Category Empty),edge,Add,FAIL,Category is required,,,Expected Error 'Category is required' NOT found (Got: 'NO TOASTS/ERROR TEXT FOUND')
+PROD-EP-10,Valid (Description Empty),edge,Add,PASS,Description is required,Description is required,Description is required,[PASS] Expected error present. Seen: Description is required
+PROD-EP-11,Valid (Edit Product),edge,Edit,PASS,,,Product saved!,[PASS] Success: Product saved!
+PROD-BVA-01,Name (Min - 1),edge,Add,PASS,Name is required,Name is required,Name is required,[PASS] Expected error present. Seen: Name is required
+PROD-BVA-02,Name (Min),edge,Add,PASS,,,Stock is required for non-rental products | Product saved!,[PASS] Success + Error both shown: Stock is required for non-rental products | Product saved!
+PROD-BVA-03,Name (Min + 1),edge,Add,PASS,,,Stock is required for non-rental products | Product saved!,[PASS] Success + Error both shown: Stock is required for non-rental products | Product saved!
+PROD-BVA-04,Name (Max - 1),edge,Add,PASS,,,Stock is required for non-rental products | Product saved!,[PASS] Success + Error both shown: Stock is required for non-rental products | Product saved!
+PROD-BVA-05,Name (Max),edge,Add,PASS,,,Stock is required for non-rental products | Product saved!,[PASS] Success + Error both shown: Stock is required for non-rental products | Product saved!
+PROD-BVA-06,Name (Max + 1),edge,Add,PASS,The name field must not be greater than 120 characters.,The name field must not be greater than 120 characters.,The name field must not be greater than 120 characters.,[PASS] Expected error present. Seen: The name field must not be greater than 120 characters.
+PROD-BVA-07,Description (Min - 1),edge,Add,PASS,Description is required,Description is required,Description is required,[PASS] Expected error present. Seen: Description is required
+PROD-BVA-08,Description (Min),edge,Add,PASS,,,Stock is required for non-rental products | Product saved!,[PASS] Success + Error both shown: Stock is required for non-rental products | Product saved!
+PROD-BVA-09,Description (Min + 1),edge,Add,PASS,,,Stock is required for non-rental products | Product saved!,[PASS] Success + Error both shown: Stock is required for non-rental products | Product saved!
+PROD-BVA-10,Description (Max - 1),edge,Add,PASS,,,Stock is required for non-rental products | Product saved!,[PASS] Success + Error both shown: Stock is required for non-rental products | Product saved!
+PROD-BVA-11,Description (Max),edge,Add,PASS,,,Stock is required for non-rental products | Product saved!,[PASS] Success + Error both shown: Stock is required for non-rental products | Product saved!
+PROD-BVA-12,Description (Max + 1),edge,Add,PASS,The description field must not be greater than 1250 characters.,The description field must not be greater than 1250 characters.,The description field must not be greater than 1250 characters.,[PASS] Expected error present. Seen: The description field must not be greater than 1250 characters.
+PROD-BVA-13,Stock (Min - 1),edge,Add,FAIL,Stock must be 0 or greater,,Stock is required for non-rental products | Product saved!,Expected Error 'Stock must be 0 or greater' NOT found (Got: 'Stock is required for non-rental products | Product saved!')
+PROD-BVA-14,Stock (Min),edge,Add,PASS,,,Stock is required for non-rental products | Product saved!,[PASS] Success + Error both shown: Stock is required for non-rental products | Product saved!
+PROD-BVA-15,Stock (Min + 1),edge,Add,PASS,,,Stock is required for non-rental products | Product saved!,[PASS] Success + Error both shown: Stock is required for non-rental products | Product saved!
+PROD-BVA-16,Stock (Nominal),edge,Add,PASS,,,Stock is required for non-rental products | Product saved!,[PASS] Success + Error both shown: Stock is required for non-rental products | Product saved!
+PROD-BVA-17,Price (Min - 0.01),edge,Add,FAIL,Price must be 0.00 or greater,,Stock is required for non-rental products | Product saved!,Expected Error 'Price must be 0.00 or greater' NOT found (Got: 'Stock is required for non-rental products | Product saved!')
+PROD-BVA-18,Price (Min),edge,Add,PASS,,,Stock is required for non-rental products | Product saved!,[PASS] Success + Error both shown: Stock is required for non-rental products | Product saved!
+PROD-BVA-19,Price (Min + 0.01),edge,Add,PASS,,,Stock is required for non-rental products | Product saved!,[PASS] Success + Error both shown: Stock is required for non-rental products | Product saved!
+PROD-BVA-20,Edit - Name (Invalid),edge,Edit,FAIL,Name is required,,Product saved!,Expected Error 'Name is required' NOT found (Got: 'Product saved!')
+PROD-BVA-21,Edit - Description (Invalid),edge,Edit,FAIL,Description is required,,Product saved!,Expected Error 'Description is required' NOT found (Got: 'Product saved!')
+PROD-BVA-22,Edit - Stock (Invalid),edge,Edit,FAIL,Stock must be 0 or greater,,Product saved!,Expected Error 'Stock must be 0 or greater' NOT found (Got: 'Product saved!')
+PROD-BVA-23,Edit - Price (Invalid),edge,Edit,FAIL,Price must be 0.00 or greater,,Product saved!,Expected Error 'Price must be 0.00 or greater' NOT found (Got: 'Product saved!')
+PROD-BVA-24,Valid (Checkboxes),edge,Add,PASS,,,Stock is required for non-rental products | Product saved!,[PASS] Success + Error both shown: Stock is required for non-rental products | Product saved!
